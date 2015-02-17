@@ -21,7 +21,7 @@ public class BlocksWorld extends World<Block>{
 		
 		for (int i = 0; i< gridDimension;++i) {
 			Color color = new Color((int)(Math.random() * 256), (int)(Math.random() * 256), (int)(Math.random() * 256));
-			this.add(getRandomEmptyLocation(), new Block(color, "" + (char)(offset + i)));
+			Block block = new Block(color, "" + (char)(offset + i));			
 		}
 	}
 	
