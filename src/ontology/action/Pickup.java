@@ -1,5 +1,7 @@
 package ontology.action;
 
+import java.awt.Color;
+
 import world.Block;
 import agents.Environment;
 import jade.content.AgentAction;
@@ -19,7 +21,7 @@ public class Pickup implements AgentAction, Executable{
 	@Override
 	public void execute(Environment env) {
 		// TODO Auto-generated method stub
-		
+		block.setUp(true);
 	}
 
 	public Block getBlock() {
@@ -27,7 +29,7 @@ public class Pickup implements AgentAction, Executable{
 	}
 
 	public void setBlock(Block block) {
-		this.block = block;
+		this.block = block;		
 	}
 
 }

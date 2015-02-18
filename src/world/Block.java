@@ -6,6 +6,7 @@ public class Block {
 
 	private Color color;
 	private String text;
+	private boolean up = false;
 
 	public Block(Color color, String text) {
 		this.color = color;
@@ -13,6 +14,8 @@ public class Block {
 	}
 
 	public Color getColor() {
+		if(up)
+			return Color.BLACK;
 		return color;
 	}
 
@@ -26,5 +29,13 @@ public class Block {
 
 	public void setText(String text) {
 		this.text = text;
+	}
+
+	public boolean isUp() {
+		return up;
+	}
+
+	public void setUp(boolean up) {
+		this.up = up;
 	}
 }

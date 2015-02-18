@@ -18,7 +18,7 @@ public class Pickdown implements AgentAction, Executable{
 	@Override
 	public void execute(Environment env) {
 		// TODO Auto-generated method stub
-		
+		block.setUp(false);
 	}
 
 	public Block getBlock() {
