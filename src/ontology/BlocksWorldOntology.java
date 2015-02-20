@@ -7,7 +7,7 @@ import jade.content.schema.AgentActionSchema;
 import jade.content.schema.ConceptSchema;
 import jade.content.schema.PredicateSchema;
 import jade.content.schema.PrimitiveSchema;
-import ontology.action.Pickdown;
+import ontology.action.Putdown;
 import ontology.action.Pickup;
 import ontology.action.Stack;
 import ontology.action.Unstack;
@@ -61,7 +61,7 @@ public class BlocksWorldOntology extends Ontology {
 			add(new AgentActionSchema(UNSTACK), Unstack.class);
 			add(new AgentActionSchema(STACK), Stack.class);
 			add(new AgentActionSchema(PICKUP), Pickup.class);
-			add(new AgentActionSchema(PICKDOWN), Pickdown.class);
+			add(new AgentActionSchema(PICKDOWN), Putdown.class);
 			
 			/************************ Concept *******************/
 			ConceptSchema blockSchema = (ConceptSchema)getSchema(BLOCK);

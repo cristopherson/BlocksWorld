@@ -4,33 +4,24 @@ import jade.content.Predicate;
 
 import java.util.ArrayList;
 
-import ontology.predicate.Ontable;
-
 import behaviors.Percept;
 
 public class AgentPercept implements Percept{
 
-	private Environment env;
 	private ArrayList<Predicate>list;
 	
 	public AgentPercept() {
-		list = new ArrayList<Predicate>();
+		setList(new ArrayList<Predicate>());
 	}
 	@Override
-	public void updatePercept(Environment env) {
-		// TODO Auto-generated method stub
-		
-		if(env != null) {
-			this.setEnv(env);
-		} else {
-			
-		}
+	public void updatePercept(ArrayList<Predicate>list) {
+		// TODO Auto-generated method stub		
+		this.setList(list);
 	}
-	public Environment getEnv() {
-		return env;
+	public ArrayList<Predicate> getList() {
+		return list;
 	}
-	public void setEnv(Environment env) {
-		this.env = env;
+	public void setList(ArrayList<Predicate> list) {
+		this.list = list;
 	}
-
 }

@@ -1,8 +1,10 @@
 package ontology.action;
 
 import ontology.concept.BlockConcept;
+import world.Block;
 import agents.Environment;
 import jade.content.AgentAction;
+import jade.core.Agent;
 
 public class Stack  implements AgentAction, Executable{
 
@@ -22,8 +24,14 @@ public class Stack  implements AgentAction, Executable{
 	}
 	
 	@Override
-	public void execute(Environment env) {
-		// TODO Auto-generated method stub		
+	public void execute(Agent agent) {
+		// TODO Auto-generated method stub
+		Environment env = (Environment)agent;
+		System.out.println("Stacking");
+		Block currentBlock = env.getWorld().convert(block2);
+		if(currentBlock!=null) {
+			currentBlock.setUp(false);
+		}
 	}
 
 	public BlockConcept getBlock1() {

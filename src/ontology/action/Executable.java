@@ -1,7 +1,7 @@
 package ontology.action;
 
-import agents.Environment;
+import jade.core.Agent;
 
 public interface Executable {
-	void execute(Environment env);
+	void execute(Agent agent);
 }

@@ -1,7 +1,8 @@
 package behaviors;
 
-import agents.Environment;
+import jade.content.Predicate;
+import java.util.ArrayList;
 
 public interface Percept {
-	void updatePercept(Environment env);
+	void updatePercept(ArrayList<Predicate>list);
 }
