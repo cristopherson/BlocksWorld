@@ -96,12 +96,12 @@ public class BlocksWorldOntology extends Ontology {
 			pickdownAction.add(BLOCK, (ConceptSchema)getSchema(BLOCK));
 			
 			AgentActionSchema stackAction = (AgentActionSchema)getSchema(STACK);
-			stackAction.add(BLOCK1, (ConceptSchema)getSchema(BLOCK1));
-			stackAction.add(BLOCK2, (ConceptSchema)getSchema(BLOCK2));
+			stackAction.add(BLOCK1, (ConceptSchema)getSchema(BLOCK));
+			stackAction.add(BLOCK2, (ConceptSchema)getSchema(BLOCK));
 			
 			AgentActionSchema unstackAction = (AgentActionSchema)getSchema(UNSTACK);
-			unstackAction.add(BLOCK1, (ConceptSchema)getSchema(BLOCK1));
-			unstackAction.add(BLOCK2, (ConceptSchema)getSchema(BLOCK2));
+			unstackAction.add(BLOCK1, (ConceptSchema)getSchema(BLOCK));
+			unstackAction.add(BLOCK2, (ConceptSchema)getSchema(BLOCK));
 			
 		} catch (OntologyException e) {
 			// TODO Auto-generated catch block

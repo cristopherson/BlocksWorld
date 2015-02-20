@@ -1,6 +1,6 @@
 package ontology.action;
 
-import world.Block;
+import ontology.concept.BlockConcept;
 import agents.Environment;
 import jade.content.AgentAction;
 
@@ -10,10 +10,13 @@ public class Stack  implements AgentAction, Executable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Block block1;
-	private Block block2;
+	private BlockConcept block1;
+	private BlockConcept block2;
 
-	public Stack(Block block1, Block block2) {
+	public Stack() {
+		this(new BlockConcept(), new BlockConcept());
+	}
+	public Stack(BlockConcept block1, BlockConcept block2) {
 		this.block1 = block1;
 		this.block2 = block2;
 	}
@@ -23,19 +26,19 @@ public class Stack  implements AgentAction, Executable{
 		// TODO Auto-generated method stub		
 	}
 
-	public Block getBlock1() {
+	public BlockConcept getBlock1() {
 		return block1;
 	}
 
-	public void setBlock1(Block block1) {
+	public void setBlock1(BlockConcept block1) {
 		this.block1 = block1;
 	}
 
-	public Block getBlock2() {
+	public BlockConcept getBlock2() {
 		return block2;
 	}
 
-	public void setBlock2(Block block2) {
+	public void setBlock2(BlockConcept block2) {
 		this.block2 = block2;
 	}
 

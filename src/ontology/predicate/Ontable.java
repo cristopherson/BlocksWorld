@@ -13,6 +13,15 @@ public class Ontable implements Predicate {
 	private BlockConcept block;	
 	private boolean onTable;
 	
+	public Ontable() {
+		this(null, false);
+	}
+	
+	public Ontable(BlockConcept block, boolean onTable) {
+		this.block = block;
+		this.onTable = onTable;
+	}
+	
 	public BlockConcept getBlock() {
 		return block;
 	}

@@ -14,6 +14,16 @@ public class On implements Predicate{
 	private BlockConcept block2;
 	private boolean on;
 	
+	public On() {
+		this(null, null, false);
+	}
+	
+	public On(BlockConcept block1, BlockConcept block2, boolean on) {
+		this.block1 = block1;
+		this.block2 = block2;
+		this.on = on;
+	}			
+	
 	public BlockConcept getBlock1() {
 		return block1;
 	}

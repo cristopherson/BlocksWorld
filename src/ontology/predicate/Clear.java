@@ -12,6 +12,10 @@ public class Clear implements Predicate{
 	private BlockConcept block;
 	private boolean clear;
 	
+	public Clear(){
+		this(null, false);
+	}
+	
 	public Clear(BlockConcept block, boolean clear) {
 		this.block = block;
 		this.clear = clear;

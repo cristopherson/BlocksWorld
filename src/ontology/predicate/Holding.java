@@ -13,6 +13,14 @@ public class Holding implements Predicate{
 	private BlockConcept block;
 	private boolean holding;
 	
+	public Holding() {
+		this(null, false);
+	}
+	public Holding(BlockConcept block, boolean holding) {
+		this.block = block;
+		this.holding = holding;
+	}
+	
 	public boolean getHolding() {
 		return holding;
 	}

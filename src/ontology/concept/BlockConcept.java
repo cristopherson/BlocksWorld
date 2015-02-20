@@ -11,6 +11,10 @@ public class BlockConcept implements Concept{
 	private int row;
 	private int col;
 	
+	public BlockConcept(){
+		this(0,0);
+	}
+	
 	public BlockConcept(int row, int col) {
 		this.row = row;
 		this.col = col;
