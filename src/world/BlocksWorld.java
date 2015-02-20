@@ -10,6 +10,7 @@ import jade.lang.acl.ACLMessage;
 import java.awt.Color;
 import java.util.ArrayList;
 
+import ontology.action.Executable;
 import ontology.concept.BlockConcept;
 import ontology.predicate.Holding;
 import ontology.predicate.On;
@@ -25,17 +26,19 @@ public class BlocksWorld extends World<Block> {
 	private int gridDimension = 5;
 	private Environment env;
 	private int offset = 'A';
+	private ArrayList<Executable>actionList;
 
 	public BlocksWorld(Environment env) {
+		setActionList(new ArrayList<Executable>());
 		Grid<Block> newGrid = new BoundedGrid<Block>(gridDimension,
 				gridDimension);
 		this.setGrid(newGrid);
 		this.setEnv(env);
 
 		for (int i = 0; i < gridDimension; ++i) {
-			Color color = new Color((int) (Math.random() * 256) + 1,
-					(int) (Math.random() * 256) + 1,
-					(int) (Math.random() * 256) + 1);
+			Color color = new Color((int) (Math.random() * 254) + 1,
+					(int) (Math.random() * 254) + 1,
+					(int) (Math.random() * 254) + 1);
 			Block block = new Block(color, "" + (char) (offset + i));
 			int col = ((int) (Math.random() * gridDimension));
 			int row = gridDimension - 1;
@@ -65,6 +68,13 @@ public class BlocksWorld extends World<Block> {
 
 	@Override
 	public void step() {
+		
+		if(!actionList.isEmpty()) {
+			Executable action = actionList.remove(0);
+			action.execute(env);
+			return;
+		}
+		
 		ArrayList<Location> list = this.getGrid().getOccupiedLocations();
 		ContentManager contentManager = env.getContentManager();
 		ContentElementList cel = new ContentElementList();
@@ -133,6 +143,14 @@ public class BlocksWorld extends World<Block> {
 		}
 
 		return null;
+	}
+
+	public ArrayList<Executable> getActionList() {
+		return actionList;
+	}
+
+	public void setActionList(ArrayList<Executable> actionList) {
+		this.actionList = actionList;
 	}
 
 }

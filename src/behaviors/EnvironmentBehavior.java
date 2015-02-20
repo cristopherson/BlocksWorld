@@ -37,8 +37,9 @@ public class EnvironmentBehavior extends CyclicBehaviour{
 
 				while (elementIterator.hasNext()) {
 					Action action = (Action) elementIterator.next();
-					((Executable) (action.getAction()))
-							.execute((Environment) myAgent);
+					((Environment) myAgent).getWorld().getActionList().add((Executable) (action.getAction()));
+//					((Executable) (action.getAction()))
+//							.execute((Environment) myAgent);
 				}
 
 			} catch (UngroundedException e) {
