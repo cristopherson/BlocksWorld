@@ -4,6 +4,10 @@ import jade.content.Predicate;
 
 import java.util.ArrayList;
 
+import ontology.concept.BlockConcept;
+import ontology.predicate.On;
+import ontology.predicate.Ontable;
+
 import behaviors.Percept;
 
 public class AgentPercept implements Percept{
@@ -11,7 +15,8 @@ public class AgentPercept implements Percept{
 	private ArrayList<Predicate>list;
 	
 	public AgentPercept() {
-		setList(new ArrayList<Predicate>());
+		ArrayList<Predicate>list =new ArrayList<Predicate>();
+		setList(list);
 	}
 	@Override
 	public void updatePercept(ArrayList<Predicate>list) {
